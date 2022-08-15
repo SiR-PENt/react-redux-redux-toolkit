@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    movies: []
+    movies: {}
 }
 // you dont need to create sparate folders for actions, constants, reducers in toolkit. You can combine everything in a single slice
 
@@ -19,5 +19,7 @@ const movieSlice = createSlice({
 })
 
 export const { addMovies } = movieSlice.actions;
+//to get a value from the store, syntax:(state, name of the reducer, name of the reducer key)
+export const getAllMovies = (state) => state.movies.movies;
 
 export default movieSlice.reducer;
