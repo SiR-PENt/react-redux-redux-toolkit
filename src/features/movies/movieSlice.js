@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import movieApi from "../../common/apis/MovieApi";
 import { APIKey } from "../../common/apis/MovieApiKey";
 
-// asyncThunk takes 3 parameters, but e don't need the third one here. First parameter is a string(with the name of the slice)/name of the asyncThunk function. Second parameter is the function that calls the API
+// asyncThunk takes 3 parameters, but we don't need the third one here. First parameter is a string(with the name of the slice)/name of the asyncThunk function. Second parameter is the function that calls the API
 
 export const fetchAsyncMovies = createAsyncThunk('movies/fetchAsyncMovies', async (term) => {
     // const movieText = "Harry";
