@@ -6,14 +6,14 @@ import { fetchAsyncMovies, fetchAsyncShows } from '../../features/movies/movieSl
 
 const Home = () => {
   const movieText = 'Harry'
-
+  const showText = 'Friends'
   // wenever we get values from the api we want to dispatch an actio so that after dispatch this will go to the reducer and the reducer will update he state
 
   const dispatch = useDispatch();
   
   useEffect(() => {
-    dispatch(fetchAsyncMovies())
-    dispatch(fetchAsyncShows())
+    dispatch(fetchAsyncMovies(movieText))
+    dispatch(fetchAsyncShows(showText))
   }, [dispatch]);
 
   return (

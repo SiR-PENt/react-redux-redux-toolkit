@@ -4,19 +4,19 @@ import { APIKey } from "../../common/apis/MovieApiKey";
 
 // asyncThunk takes 3 parameters, but e don't need the third one here. First parameter is a string(with the name of the slice)/name of the asyncThunk function. Second parameter is the function that calls the API
 
-export const fetchAsyncMovies = createAsyncThunk('movies/fetchAsyncMovies', async () => {
-    const movieText = "Harry";
+export const fetchAsyncMovies = createAsyncThunk('movies/fetchAsyncMovies', async (term) => {
+    // const movieText = "Harry";
     const response = await movieApi
-      .get(`?apiKey=${APIKey}&s=${movieText}&type=movie`)
+      .get(`?apiKey=${APIKey}&s=${term}&type=movie`)
       return response.data
 })
 
 export const fetchAsyncShows = createAsyncThunk(
   "movies/fetchAsyncShows",
-  async () => {
-    const seriesText = "Friends";
+  async (term) => {
+    // const seriesText = "Friends";
     const response = await movieApi.get(
-      `?apiKey=${APIKey}&s=${seriesText}&type=series`
+      `?apiKey=${APIKey}&s=${term}&type=series`
     );
     return response.data;
   }
